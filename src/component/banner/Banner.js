@@ -7,6 +7,7 @@ import "./banner.css"
 
 const Banner = () => {
     const [movie, setMovie] = useState({});
+    // console.log(movie)
     useEffect(() => {
         (async () => {
             try {
@@ -15,6 +16,8 @@ const Banner = () => {
                 setMovie(request.data.results[
                     Math.floor(Math.random() * request.data.results.length)
                 ]);
+                //log movie
+   
             } catch (error) {
                 console.log("error", error);
             }
@@ -42,7 +45,7 @@ const Banner = () => {
                   <button className="banner__button play">Play</button>
                   <button className="banner__button">My List</button>
               </div>
-              {/* <h1 className="banner__description">{truncate(movie?.overview, 150)}</h1> //it is for  description titile */}
+              {/* <h1 className="banner__description">{truncate(movie?.overview, 150)}</h1>  */}
           </div>
           <div className="banner__fadeBottom" />
       </div>
